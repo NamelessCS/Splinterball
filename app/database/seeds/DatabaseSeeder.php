@@ -11,7 +11,13 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 
-		// $this->call('UserTableSeeder');
+		DB::statement('SET foreign_key_checks = 0');
+		$this->call('GameTableSeeder');
+		$this->call('PlayerTableSeeder');
+		$this->call('LineupTableSeeder');
+		$this->call('RotationTableSeeder');
+		$this->call('TeamTableSeeder');
+		DB::statement('SET foreign_key_checks = 1');
 	}
 
 }
