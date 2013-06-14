@@ -18,4 +18,8 @@ class HomeController extends BaseController {
 	public function getHome(){
 		return View::make('home');
 	}
+
+	public function test(){
+		echo "This is for test purposes.";
+	}
 }
